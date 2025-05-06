@@ -1,0 +1,141 @@
+/* Importação da fonte do Google - Audiowide */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+* {
+  margin: 0; /* Margem */
+  padding: 0; /* Preenchimento */
+  box-sizing: border-box; /* Tamanho da caixa */
+  font-family: "Audiowide", sans-serif; /* Família da fonte */
+}
+
+body {
+  height: 100vh; /* Altura */
+  display: flex; /* Exibição flexível */
+  padding: 15px; /* Preenchimento interno */
+  align-items: center; /* Alinhamento vertical */
+  justify-content: center; /* Centralizar elementos */
+  background: #f6f7fb; /* Cor de fundo */
+}
+
+.container {
+  display: flex; /* Exibição flexível */
+  flex-direction: column; /* Direção dos itens */
+  max-width: 535px; /* Largura máxima */
+  width: 100%; /* Largura total */
+  padding: 2rem 5rem; /* Espaçamento interno */
+  border-radius: 14px; /* Borda arredondada */
+  background: #fff; /* Fundo branco */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra da caixa */
+}
+
+.result_images {
+  display: flex; /* Exibição flexível */
+  gap: 7rem; /* Espaçamento entre itens */
+  justify-content: center; /* Centralizar */
+}
+
+.container.start .user_result {
+  transform-origin: left; /* Origem da transformação */
+  animation: userShake 0.7s ease infinite; /* Animação */
+}
+
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg); /* Rotação */
+  }
+}
+
+.container.start .bot_result {
+  transform-origin: right; /* Origem da transformação */
+  animation: botShake 0.7s ease infinite; /* Animação */
+}
+
+@keyframes botShake {
+  50% {
+    transform: rotate(-10deg); /* Rotação */
+  }
+}
+
+.result_images img {
+  width: 100px; /* Largura da imagem */
+}
+
+.user_result img {
+  transform: rotate(90deg); /* Rotação */
+}
+
+.bot_result img {
+  transform: rotate(-90deg) rotateY(180deg); /* Rotação */
+}
+
+.result {
+  text-align: center; /* Alinhamento do texto */
+  font-size: 2rem; /* Tamanho da fonte */
+  color: #7d2ae8; /* Cor do texto */
+  margin: 1.5rem 0; /* Margem */
+}
+
+.option_image img {
+  width: 50px; /* Largura da imagem */
+}
+
+.option_images {
+  display: flex; /* Exibição flexível */
+  width: 100%; /* Largura total */
+  align-items: center; /* Alinhamento vertical */
+  margin-top: 2.5rem; /* Margem superior */
+  justify-content: space-evenly; /* Espaçamento uniforme */
+}
+
+.container.start .option_images {
+  pointer-events: none; /* Desativar interação */
+}
+
+.option_image {
+  display: flex; /* Exibição flexível */
+  flex-direction: column; /* Direção dos itens */
+  align-items: center; /* Alinhamento */
+  opacity: 0.5; /* Opacidade reduzida */
+  cursor: pointer; /* Cursor tipo ponteiro */
+  transition: opacity 0.3s ease; /* Transição */
+}
+
+.option_image:hover {
+  opacity: 1; /* Opacidade total ao passar o mouse */
+}
+
+.option_image.active {
+  opacity: 1; /* Opacidade total quando ativo */
+}
+
+.option_image img {
+  pointer-events: none; /* Desativar interação */
+}
+
+.option_image p {
+  color: #7d2ae8; /* Cor do texto */
+  font-size: 1.235rem; /* Tamanho da fonte */
+  margin-top: 1rem; /* Margem superior */
+  pointer-events: none; /* Desativar interação */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem; /* Ajuste do espaçamento */
+  }
+
+  .result_images img {
+    width: 80px; /* Ajuste da largura */
+  }
+}
+
+@media (max-width: 500px) {
+  .option_images {
+    justify-content: space-between; /* Espaçamento entre itens */
+  }
+
+  .option_image img {
+    width: 40px; /* Ajuste da largura */
+  }
+}
