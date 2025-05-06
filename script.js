@@ -6,7 +6,7 @@ const result = document.querySelector(".result");
 const optionImages = document.querySelectorAll(".option_image");
 
 // Define imagens possíveis e resultados
-const botImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
+const botImages = ["./rock.png", "./paper.png", "./scissors.png"];
 const resultados = {
   RR: "Empate",
   RP: "BOT",
@@ -25,7 +25,7 @@ function aoClicarNaOpcao(evento) {
   const indiceClicado = Array.from(optionImages).indexOf(imagemClicada);
 
   // Reinicia os resultados e exibe "Aguarde..."
-  userResult.src = botResult.src = "images/rock.png";
+  userResult.src = botResult.src = "./rock.png";
   result.textContent = "Aguarde...";
 
   // Ativa a imagem clicada e desativa as outras
